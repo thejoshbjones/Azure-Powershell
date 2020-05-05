@@ -1,0 +1,2 @@
+get-aduser -filter * -searchbase "OU=Users,OU=-ProSB,DC=hq,DC=prosb,DC=local" -Properties Name,emailaddress,description,company,department,title,telephoneNumber | ? { ($_.distinguishedname -notlike '*Misc*') -and ($_.distinguishedname -notlike '*frank simone*') } | select Name,EmailAddress,Description,Company,Department,Title,TelephoneNumber | sort name | Export-Csv localfolder\Users.csv -NoTypeInformation
+localfolder\Users.csv
