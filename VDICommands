@@ -1,0 +1,5 @@
+# https://docs.microsoft.com/en-us/azure/virtual-desktop/powershell-module
+Connect-AzAccount
+Select-AzSubscription -Subscription "Microsoft Partner Network"
+Get-AzWvdSessionHost -HostPoolName VDI1 -Name UTI-VDI-1 -ResourceGroupName VDI
+Get-AzLocation
